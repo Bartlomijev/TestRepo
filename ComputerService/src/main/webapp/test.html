@@ -1,0 +1,30 @@
+<html ng-app="myApp">
+    <head> 
+     <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js">
+	 </script>
+	 <script>
+	 myApp=angular.module('myApp',[]);
+	 myApp.controller('myController',function($scope,$http){
+		$http.get('BDList.json').success(function(response){
+		$scope.myData = response;
+	 });
+	 });
+	 </script>
+    </head>
+    <body ng-controller="myController">
+	<table border=1>
+	<tr>
+	<td>deviceId</td>
+	<td>deviceName</td>
+	<td>deviceDescription</td>
+	<td>deviceRepairStatus</td>
+       </tr>
+	<tr ng-repeat="data in myData">
+	<td>{{data.deviceId}}</td>
+	<td>{{data.deviceName}}</td>
+	<td>{{data.deviceDescription}}</td>
+	<td>{{data.deviceRepairStatus}}</td>
+       </tr>
+	   </table>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+    <Resource name="jdbc/library"
+    auth="Container"
+    type="javax.sql.DataSource"
+    initialSize="10"
+    maxTotal="100"
+    maxIdle="30"
+    maxWaitMillis="10000"
+    username="root"
+    password="root" 
+    driverClassName="com.mysql.jdbc.Driver"
+    url="jdbc:mysql://localhost:3306/user_and_device?useSSL=false" />
+    
+<!--  <Realm className="org.apache.catalina.realm.DataSourceRealm"
+        dataSourceName="jdbc/user_and_device"
+        userTable="user"
+        userNameCol="USERNAME"
+        userCredCol="PASSWORD"
+        userRoleTable="user" 
+        roleNameCol="ROLE_NAME"
+        localDataSource="true" /> -->
+        
+</Context>
