@@ -30,9 +30,9 @@ public class SearchServlet extends HttpServlet {
         if(device != null && result) {
             request.setAttribute("option", operation);
             request.setAttribute("device", device);          
-            request.getRequestDispatcher("tableView.jsp").forward(request, response);
+            request.getRequestDispatcher("tableView.html").forward(request, response);
         } else {
-            request.getRequestDispatcher("error.jsp").forward(request, response);
+            request.getRequestDispatcher("error.html").forward(request, response);
         }
 	}
 }

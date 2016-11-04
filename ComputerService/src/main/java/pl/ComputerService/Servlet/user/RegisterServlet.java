@@ -47,9 +47,9 @@ public class RegisterServlet extends HttpServlet {
 		          if(user != null && result) {
 		                request.setAttribute("option", operation);
 		                request.setAttribute("user", user);          
-		                request.getRequestDispatcher("index.jsp").forward(request, response);
+		                request.getRequestDispatcher("index.html").forward(request, response);
 		            } else {
-		                request.getRequestDispatcher("error.jsp").forward(request, response);
+		                request.getRequestDispatcher("error.html").forward(request, response);
 		            }
 		}
 

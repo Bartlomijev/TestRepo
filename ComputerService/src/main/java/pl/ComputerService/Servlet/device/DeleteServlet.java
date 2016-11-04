@@ -18,7 +18,6 @@ public class DeleteServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		System.out.println("hurrej");
         int deviceId = Integer.parseInt(request.getParameter("deviceId"));
     	String deviceName = null;
     	String deviceDescription = null;
@@ -35,9 +34,9 @@ public class DeleteServlet extends HttpServlet {
         if(device != null && result) {
             request.setAttribute("option", operation);
             request.setAttribute("device", device);          
-            request.getRequestDispatcher("tableView.jsp").forward(request, response);
+            request.getRequestDispatcher("tableView.html").forward(request, response);
         } else {
-            request.getRequestDispatcher("error.jsp").forward(request, response);
+            request.getRequestDispatcher("error.html").forward(request, response);
         }
 	}
 }

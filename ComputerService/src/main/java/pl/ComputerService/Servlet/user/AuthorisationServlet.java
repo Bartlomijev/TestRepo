@@ -38,13 +38,13 @@ public class AuthorisationServlet extends HttpServlet {
 		}
 		
 		if (UserRoleName.CLIENT.getRoleDescription().equals(role)) {
-			request.getRequestDispatcher("clientIndex.jsp").forward(request, response);
+			request.getRequestDispatcher("clientIndex.html").forward(request, response);
 		} else if (UserRoleName.SERVICEMAN.getRoleDescription().equals(role)) {
-			request.getRequestDispatcher("servicemanIndex.jsp").forward(request, response);
+			request.getRequestDispatcher("servicemanIndex.html").forward(request, response);
 		} else if (UserRoleName.MANAGER.getRoleDescription().equals(role)) {
-			request.getRequestDispatcher("managerIndex.jsp").forward(request, response);
+			request.getRequestDispatcher("managerIndex.html").forward(request, response);
 		} else {
-			request.getRequestDispatcher("error.jsp").forward(request, response);
+			request.getRequestDispatcher("error.html").forward(request, response);
 		}
 	}
 

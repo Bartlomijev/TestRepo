@@ -24,7 +24,7 @@ public class ReadAllServlet extends HttpServlet {
     
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("do get READALLSERVLET");
+		System.out.println("READ_ALL_SERVLET");
 		request.setCharacterEncoding("UTF-8");
         DeviceDAO dao = new DeviceDAO();
         List<Device> allDevicesList = new ArrayList<>(); 
@@ -38,7 +38,6 @@ public class ReadAllServlet extends HttpServlet {
             
             try
             {
-            	System.out.println("linijka przed mapperem");
                mapper.writeValue(new File("C://Users/Bartek/ComputerService/git/ComputerService/src/main/webapp/BDList.json"), allDevicesList);
             } catch (JsonGenerationException e)
             {
@@ -52,12 +51,11 @@ public class ReadAllServlet extends HttpServlet {
             }
         
         if(allDevicesList != null && result) {
-        	System.out.println("linijka przed mapperem");
             request.setAttribute("option", operation);
             request.setAttribute("list", allDevicesList);          
             request.getRequestDispatcher("tableView.html").forward(request, response);
         } else {
-            request.getRequestDispatcher("error.jsp").forward(request, response);
+            request.getRequestDispatcher("error.html").forward(request, response);
         }
 	}
 }

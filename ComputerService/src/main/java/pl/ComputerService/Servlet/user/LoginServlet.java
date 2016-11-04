@@ -14,7 +14,7 @@ public class LoginServlet extends HttpServlet {
        
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
-		System.out.println("ReadAllServlet");
+		System.out.println("LoginServlet");
 		request.setCharacterEncoding("UTF-8");
 		String userName = request.getParameter("username");
 		String password = request.getParameter("password");
@@ -29,7 +29,7 @@ public class LoginServlet extends HttpServlet {
              request.setAttribute("user", user);  
              request.getRequestDispatcher("/AuthorisationServlet").forward(request, response);
          } else {
-             request.getRequestDispatcher("loginError.jsp").forward(request, response);
+             request.getRequestDispatcher("loginError.html").forward(request, response);
          }
 	}
 
